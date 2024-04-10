@@ -1,0 +1,48 @@
+﻿<Window x:Class="Salon.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"       
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Salon"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\alepi\OneDrive\Рабочий стол\3yzi3740turwety0hmhplq56245mpehw.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="SalonGrid">
+            <DataGrid.Background>
+                <ImageBrush/>
+            </DataGrid.Background>
+        </DataGrid>
+        <TextBlock Grid.Column="0" Text="АВТОРИЗАЦИЯ" VerticalAlignment="Center" FontFamily="Constantia" FontSize="30" Margin="284,0,284,0" Foreground="#FFFAF9F9"/>
+        <TextBox Grid.Column="0" VerticalAlignment="Center" Grid.Row="1"
+ x:Name="LoginTbx"
+ materialDesign:HintAssist.Hint="Name" Margin="284,0,285,0" Foreground="White">
+            <TextBox.Text>
+                <Binding
+     Path="Name"
+     UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <PasswordBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"
+       x:Name="PasswordTbx"
+       materialDesign:HintAssist.Hint="Password"
+     materialDesign:TextFieldAssist.HasClearButton="True" Margin="284,0,285,0" Foreground="White"/>
+        <Button Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Content="ВХОД" Margin="284,0,285,0" Background="#FF800900" Foreground="White" FontFamily="Constantia" FontSize="18" Click="Button_Click"/>
+
+    </Grid>
+</Window>
